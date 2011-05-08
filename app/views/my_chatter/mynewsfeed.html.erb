@@ -1,0 +1,64 @@
+<div data-role="header" >
+	<%= link_to 'Home', my_chatter_home_path, "data-icon" => "home", "data-iconpos" => "notext", "data-role" => "button", "data-theme" => "b", "data-transition" => "flip", "data-direction" => "reverse" %>
+  <h1>News Feed</h1>
+</div>
+<div data-role="content">
+  <table width="100%">
+	
+	<% @feed["feedItems"]["items"].each do |post| %>
+			<tr>
+				<td colspan="2">
+					<hr/>
+				</td>
+			</tr>
+			<tr>
+				<td width="60px">
+					<%= image_tag(ENV['sfdc_instance_url']+post["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
+				
+				</td>
+				<td>
+	  				<b><%= post["user"]["name"] %></b><br/>
+	  				<%= post["body"]["text"] %><br/>
+					<div data-role="controlgroup" data-type="horizontal">
+						<%= link_to 'Like', 
+						{:action => "like", :controller => "chatter_posts", :feeditemid => post["id"]},
+						 "data-transition" => "slidedown"%>
+						|
+						<%= link_to 'Comment', 
+						{:action => "newcomment", :controller => "chatter_posts", :feeditemid => post["id"]},
+						 "data-rel" => "dialog",
+						 "data-transition" => "pop" %>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td colspan="2" align="left">
+					<div data-role="collapsible" data-collapsed="true" >
+						<h3><%=post["comments"]["total"] %> Comments | <%=post["likes"]["total"] %> Likes</h3>
+						<% post["comments"]["comments"].each do |c| %>
+							<%= image_tag(ENV['sfdc_instance_url']+c["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
+							<b><%= c["user"]["name"] %></b> &nbsp; 
+							<%= c["body"]["text"] %><br/>
+						<% end %>
+					</div>
+				</td>
+			</tr>
+	<% end %>
+ </table>	
+</div>
+
+<div data-role="footer">
+ 	<% if (!@feed["feedItems"]["previousPageUrl"].nil?)%>
+		<%= link_to 'Newer', 
+			{:action => "mynewsfeed", :controller => "my_chatter", 
+			 :previouspageurl => @feed["feedItems"]["previousPageUrl"]}, "class" => "ui-btn-left",
+	"data-icon" => "arrow-l", "data-iconpos" => "left", "data-transition" => "slidedown"%>
+	<% end %>
+	<% if (!@feed["feedItems"]["nextPageUrl"].nil?)%>
+		<%= link_to 'Older',
+			{:action => "mynewsfeed", :controller => "my_chatter", 
+			 :nextpageurl => @feed["feedItems"]["nextPageUrl"]},  "class" => "ui-btn-right",
+	"data-icon" => "arrow-r", "data-iconpos" => "right", "data-transition" => "slideup"%>
+	<% end %>
+ 
+</div>

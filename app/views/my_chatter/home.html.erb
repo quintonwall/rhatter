@@ -1,0 +1,51 @@
+<div data-role="header" >
+  <h1>Home</h1>
+		
+ 		<%= link_to 'Home', "/my_chatter/home", "data-icon" => "home", "data-iconpos" => "notext", "data-role" => "button", "data-theme" => "b"%>
+ 		<%= link_to 'Update Status', "/my_chatter/newstatus", "data-icon" => "plus", "class" => "ui-btn-right", "data-role" => "button", "data-rel" => "dialog",  "data-transition" => "pop" %>
+
+
+</div>
+<div data-role="content">
+
+<table>
+	<tr>
+		<td align="center">
+			<!-- would like to upload a new pic from the camera using phonegap:
+			  http://docs.phonegap.com/phonegap_camera_camera.md.html
+			-->
+				<%= image_tag(ENV['sfdc_instance_url']+@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+		</td>
+		<td>
+			<b><%= @userInfo["name"] %></b> says:
+			<i><%= @userInfo["currentStatus"]["body"]["text"]%></i>
+		</td>
+	</tr>
+</table>
+
+<div data-role="collapsible" data-collapsed="true" >
+	<h3 >About Me</h3>
+			<div><b>Name: </b> 	<%= @userInfo["name"] %></div>
+			<div><b>Email: </b> <%= @userInfo["email"] %></div>
+			<% @userInfo["phoneNumbers"].each do |ph| %>
+			  	<div>
+					<b>Phone <%= ph["type"]%>:</b>
+					<!-- tel protocol only works on an actual phone, 
+						 not the simulator -->
+					<a href='tel:<%= ph["number"] %>' 
+						rel="external"><%= ph["number"] %></a>
+				</div>
+			<% end %>
+			<div><b>Location: </b> <%= @userInfo["address"]["street"] %>,
+								<%= @userInfo["address"]["city"] %> 
+			 					<%= @userInfo["address"]["state"] %></div>
+			<div><b>About Me:</b><i><%= @userInfo["aboutMe"] %> </i></div>
+</div>
+
+	<div data-role="controlgroup">
+		<%= link_to ' My Groups', { :action => "mygroups" }, "data-icon" => "arrow-r", "data-iconpos" => "right", "class" => "ui-btn-right", "data-role" => "button", "data-transition" => "flip"%>
+		<%= link_to 'My Followers', { :action => "myfollowers" }, "data-icon" => "arrow-r", "data-iconpos" => "right", "class" => "ui-btn-right", "data-role" => "button", "data-transition" => "flip"%>
+		<%= link_to 'I\'m Following', { :action => "imfollowing" }, "data-icon" => "arrow-r", "data-iconpos" => "right", "class" => "ui-btn-right", "data-role" => "button", "data-transition" => "flip"%>
+		<%= link_to 'News Feed', { :action => "mynewsfeed" }, "data-icon" => "arrow-r", "data-iconpos" => "right", "class" => "ui-btn-right", "data-role" => "button", "data-transition" => "flip"%>
+		</div>
+</div>
