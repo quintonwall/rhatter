@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Glossy.js (with IE 6/7/8/9 support)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-language" content="en">
+	<link rel="bookmark" type="text/html" title="Glossy.js" href="http://www.netzgesta.de/glossy/">
+	<meta name="Author" lang="en" content="glossy.netzgesta.de - Christian Effenberger">
+	<meta name="Publisher" lang="en" content="www.netzgesta.de">
+	<meta name="Copyright" lang="en" content="www.netzgesta.de - Christian Effenberger">
+	<meta name="Generator" lang="en" content="Christian Effenberger">
+	<meta name="Description" lang="en" content="Glossy.js 1.8 allows you to add corners (and also shading and shadow) to images on your webpages through unobtrusive javascript">
+	<meta name="Keywords" lang="en" content="glossy.js,images,corners,shading,shadow,unobtrusive javascript,Mozilla,Firefox,Opera,Safari">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<script type="text/javascript" src="cvi_glossy_lib.js"></script>
+	<script type="text/javascript" src="glossy.js"></script>
+<style type="text/css">
+a { color: blue; font-style:italic; text-decoration:none; }
+tt {color: green;}
+b {color: #993333;}
+body { background: url(images/backgrnd.jpg); color: black; font-family: Georgia; line-height: 1.5; margin: 0.5em 1em;}
+h2 { line-height: 1; }
+.demo { float: left; padding: 10px; }
+#guru { float: none; padding: 4px; width: 99%; height: auto; text-align: center; background-color: black; }
+#guru div { float: none; border: solid 3px red; padding: 4px; font-family: monospace; font-size: 1.25em; width: auto; height: auto; color: red; text-align: center; text-decoration: blink; }
+.bookmarks { white-space: nowrap; width: 98%; margin: 0; padding-top: 10px; border-top: 1px dotted gray;}
+</style>
+</head>
+<body><noscript><div id="guru" title="By this you can recognize the Amiga fan!"><div><b>Guru Meditation</b> - With deactivated JavaScript: Images stay unmodified!</div></div></noscript>
+
+<table>
+<tr><td valign="top" style="padding-top: 0.5em"><img src="images/glossy.png" border="0" class="glossy" alt="glossy.js"></td>
+<td style="padding: 0 0 0 15px; margin: 0; line-height: 1.5; font-style: italic;">
+<p><strong>Glossy.js 1.8</strong> allows you to add corners and shading and shadow to images on your webpages (alternatively: <a href="http://corner.netzgesta.de/">corner.js</a>). It uses unobtrusive javascript to keep your code clean.</p>
+<p>It works in all the major browsers - Mozilla Firefox 1.5+, Opera 9+, Safari and IE6+. On older browsers, it'll degrade and your visitors won't notice a thing.</p>
+<p><small><a href="http://lab.netzgesta.de/" title="showcase">CVI-lab</a>: Get a fast impression of the effects and their illustration qualities.</small></p>
+</td></tr>
+</table>
+
+<h2>Demonstration</h2>
+
+<p style="clear: left">Shows some of the things "glossy.js" does.<br>&nbsp;&nbsp;&nbsp;&nbsp;6 images with class = "<tt>glossy iradius50</tt>"</p>
+<div class="demo"><img src="images/0.jpg" class="glossy iradius50" alt="" /></div>
+<div class="demo"><img src="images/1.jpg" class="glossy iradius50" alt="" /></div>
+<div class="demo"><img src="images/2.jpg" class="glossy iradius50" alt="" /></div>
+<div class="demo"><img src="images/3.jpg" class="glossy iradius50" alt="" /></div>
+<div class="demo"><img src="images/4.jpg" class="glossy iradius50" alt="" /></div>
+<div class="demo"><img src="images/5.jpg" class="glossy iradius50" alt="" /></div>
+<p style="clear: left;"></p>
+<p style="clear: left">"cvi_glossy_lib.js" supports additional appearances.</p>
+<div class="demo"><img src="images/0.jpg" onload="cvi_glossy.add(this,{noradius:true,nogradient:true,angle:-100});" alt="" /></div>
+<div class="demo"><img src="images/1.jpg" onload="cvi_glossy.add(this,{radius:33,nogradient:true,angle:-66});" alt="" /></div>
+<div class="demo"><img src="images/2.jpg" onload="cvi_glossy.add(this,{radius:50,nogradient:true,angle:-33});" alt="" /></div>
+<div class="demo"><img src="images/3.jpg" onload="cvi_glossy.add(this,{radius:50,nogradient:true,angle:0});" alt="" /></div>
+<div class="demo"><img src="images/4.jpg" onload="cvi_glossy.add(this,{radius:33,nogradient:true,angle:50});" alt="" /></div>
+<div class="demo"><img src="images/5.jpg" onload="cvi_glossy.add(this,{noshadow:true,radius:20,nogradient:true,angle:100});" alt="" /></div>
+<p style="clear: left;"></p>
+<p style="clear: left">&nbsp;&nbsp;&nbsp;&nbsp;Empty gif with class = "<tt>glossy ibgcolor00aa00 igradient00aaaa horizontal noshadow</tt>"</p>
+<div class="demo"><img src="images/space.gif" width="700" height="16" class="glossy ibgcolor00aa00 igradient00aaaa horizontal noshadow" title="tooltip support" alt="" /></div>
+<p style="clear: left;"></p>
+<p style="clear: left">&nbsp;&nbsp;&nbsp;&nbsp;3 images with class = "<tt>glossy</tt>"</p>
+<div class="demo"><img src="images/example.jpg" class="glossy" title="onClick event" onClick="alert('Glossy dimension '+this.width+'x'+this.height);" alt="" /></div>
+<div class="demo"><img src="images/example.jpg" style="width: 200px; height: 135px;" class="glossy" title="onClick event" onClick="alert('ALT=\''+this.alt+'\'');" alt="beautiful landscape" /></div>
+<div class="demo"><img src="images/example.jpg" style="width: 150px; height: 101px;" class="glossy" title="onClick event" onClick="alert('ID='+this.id);" id="landscape_image" alt="" /></div>
+<p style="clear: left;"></p>
+
+<h2>Setting Up</h2>
+
+<p>Download "glossy.js" and include it into your webpage.</p>
+
+<code>
+&lt;script type="text/javascript" src="<tt>glossy.js</tt>"&gt;&lt;/script&gt;
+</code>
+
+<h2>Using It</h2>
+
+<p>To make it glossy just add a class="<tt>glossy</tt>" to the image <em>(minimum dimension: 16x16)</em>.</p>
+
+<h2>Classes</h2>
+
+<ul>
+<li>Initialisation class "<tt>glossy</tt>"</li>
+<li><small><em>vary the radius by adding iradius followed by the desired <b>radius</b> in percent
+of half of the smaller picture dimension:</em></small><br>
+Corner radius class "<tt>iradius25</tt>" - min=20 max=50 default=25</li>
+<li><small><em>vary the shadow by adding noshadow:</em></small><br>
+Noshadow class "<tt>noshadow</tt>" - default=false</li>
+<li><small><em>vary the background by adding ibgcolor followed by the desired <b>color</b> as hex:</em></small><br>
+Background color class "<tt>ibgcolor</tt>" - min=000000 max=ffffff default=0</li>
+<li><small><em>vary the background by adding igradient followed by the desired <b>color</b> as hex:</em></small><br>
+Gradient color class "<tt>igradient</tt>" - min=000000 max=ffffff default=0</li>
+<li><small><em>vary the color gradient direction by adding horizontal:</em></small><br>
+Horizontal gradient class "<tt>horizontal</tt>" - default=false</li>
+</ul>
+
+<h2>Scripting lib</h2>
+
+<p>If you want flexibility, use "<b>cvi_glossy_lib.js</b>" instead of "<b>glossy.js</b>". 
+You can make your images respond to user actions (e.g. changing one or more options when the image is hovered over).</p>
+<dl>
+	<dt><strong>Set</strong> defaults using Javascript</dt>
+	<dd>
+		<code>
+		cvi_glossy.defaultRadius = 25; <tt>//INT 20-50 (%)</tt><br>
+		cvi_glossy.defaultColor = 0; <tt>//STR '#000000'-'#ffffff' or 0</tt><br>
+		cvi_glossy.defaultColor2 = 0; <tt>//STR '#000000'-'#ffffff' or 0</tt><br>
+		cvi_glossy.defaultGradient = 'v'; <tt>//STR  'd|h|v'-'diagonally|horizontal|vertical'</tt><br>
+		cvi_glossy.defaultAngle = 0; <tt>//INT -100 to +100 (% angle)</tt><br>
+		cvi_glossy.defaultShade = 50; <tt>//INT 0-100 (% opacity)</tt><br>
+		cvi_glossy.defaultShadow = 40; <tt>//INT 0-100 (% opacity)</tt><br>
+		cvi_glossy.defaultNoshadow = false;	<tt>//BOOLEAN</tt><br>
+		cvi_glossy.defaultNoradius = false;	<tt>//BOOLEAN</tt><br>
+		cvi_glossy.defaultNogradient = false;	<tt>//BOOLEAN</tt><br>
+		</code>
+		<strong>If</strong> <b>cvi_filter_lib.js</b> is loaded also...<br>
+		<code>
+		cvi_glossy.defaultFilter = null; <tt>//OBJ  [{f='grayscale'},{f='emboss', s:1}...]</tt>
+		</code>
+  		<p></p>
+	</dd>
+	<dt><strong>Add</strong> images using Javascript</dt>
+  	<dd>
+  		<code>cvi_glossy.add(<tt>image</tt>, <tt>options</tt>);</code><br><small>
+		<tt>image</tt> should be an image element: document.getElementById(<b>"myimg"</b>)<br>
+		<tt>options</tt> can contain one or more values: {<tt>radius</tt>: <b>value</b>, <tt>shadow</tt>: <b>value</b>, <tt>shade</tt>: <b>value</b>, <tt>angle</tt>: <b>value</b>, <tt>color</tt>: <b>value</b>, <tt>color2</tt>: <b>value</b>, <tt>gradient</tt>: <b>value</b>, <tt>noshadow</tt>: <b>value</b>, <tt>noradius</tt>: <b>value</b>, <tt>nogradient</tt>: <b>value</b>, <tt>filter</tt>: <b>value</b>}</small>
+		<dl><dt>Examples:</dt>
+		<dd>
+			<code>
+			cvi_glossy.add(document.getElementById(<b>"myimg"</b>), { <tt>shadow</tt>: <b>75</b>, <tt>shade</tt>: <b>20</b> });<br>
+			&lt;img onLoad="cvi_glossy.add(<b>this</b>, { <tt>shadow</tt>: <b>75</b>, <tt>shade</tt>: <b>20</b> });" ...&gt;
+			</code>
+  		</dd></dl>
+  		<p></p>
+  	</dd>
+	<dt><strong>Modify</strong> images using Javascript</dt>
+  	<dd>
+  		<code>cvi_glossy.modify(<tt>image</tt>, <tt>options</tt>);</code><br>
+  		<small>If the image has already an effect but a <tt>option</tt> value has changed, the effect will be changed accordingly.</small><br>
+		<dl><dt>Example:</dt>
+		<dd>
+			<code>cvi_glossy.modify(document.getElementById(<b>"myimg"</b>), { <tt>radius</tt>: <b>24</b> });</code>
+  		</dd></dl>
+		<p></p>
+  	</dd>
+	<dt><strong>Remove</strong> effect from an image using Javascript</dt>
+	<dd>
+		<code>cvi_glossy.remove(<tt>image</tt>);</code>
+  		<p></p>
+	</dd>
+</dl>
+
+<h2>Support libs</h2>
+
+<p>If you are using the more flexible "<b>cvi_glossy_lib.js</b>" instead of "<b>glossy.js</b>", 
+you'll get access to additional features by the following support libraries <em>(part of distribution)</em>:</p>
+<ul>
+<li><b>cvi_filter_lib.js</b> supports image filtering capabilities. <small>[<i><a class="lk" title="Filter capability WYSIWYG-Editor" href="http://lab.netzgesta.de/">WYSIWYG-Editor</a></i>]   [<i><a class="lk" title="CVI-Filter Home-Page" href="http://filter.netzgesta.de/">Home-Page</a></i>]</small><br />
+<small><i>Provides image filter capability for Canvas (only if getImageData/setImageData is supported)</i></small>.<br />
+<br />
+<code>filter : [{<tt>#1 filter options</tt>},{<tt>#2 filter options</tt>}...];</code>
+<dt><code><tt>options</tt> &nbsp; e.g. {<b>f</b>: '<tt>contrast</tt>', <b>s</b>: <tt>1.5</tt>, ...}</code></dt>
+<dd>
+	<code><b>f</b> == STRING <b>filter name</b> e.g. "invert" Default: <tt>null</tt> <em>(required)</em><pre>
+     "<tt>invert</tt>" Reverses all colors of the image
+     "<tt>invertalpha</tt>" Reverses the transparency of the image
+     "<tt>grayscale</tt>" Converts the image into grayscale
+     "<tt>solarize</tt>" Solarizes the image by negating the colors
+     "<tt>sepia</tt>" Applies the well-known sepia coloring to the image
+     "<tt>threshold</tt>" Converts the image to black&white (s<1 == darker and s>1 == brighter)
+     "<tt>posterize</tt>" Posterizes the image by quantizing each channel to a limited number of levels
+     "<tt>tritone</tt>" Applies 3 colors for low|mid|high range according to the brightness of the image
+     "<tt>mixrgb</tt>" Mixes the RGB channels with the other two channels
+     "<tt>exposure</tt>" Simulates changing the exposure of the image
+     "<tt>gamma</tt>" Standard gamma correction (s<1 == darker and s>1 == brighter)
+     "<tt>brightness</tt>" Change brightness (s<1 == darker and s>1 == brighter)
+     "<tt>contrast</tt>" Change contrast (s<1 == lower and s>1 == higher)
+     "<tt>adjustrgba</tt>" Adjust the red & green & blue & alpha channel of the image (s == [r,g,b,a])
+     "<tt>adjusthsba</tt>" Adjust hue & saturation & brightness & alpha channel of the image (s == [h,s,b,a])
+     "<tt>adjustyuva</tt>" Adjust luminance & blue–yellow chrominance & red–cyan chrominance & alpha channel of the image (s == [y,u,v,a])
+     "<tt>colorkey</tt>" Set alpha to 0 if pixel color values are higher than min and lower than max rgb color
+     "<tt>chromakey</tt>" Set alpha to 0 if pixel hue & saturation & brightness matches
+     "<tt>smooth</tt>" Smoothes the image (result is similar to bluring)
+     "<tt>spinblur</tt>" Blurs by rotating the centered image
+     "<tt>zoomblur</tt>" Blurs by zooming the centered image
+     "<tt>motionblur</tt>" Blurs by moving the image to a defined direction
+     "<tt>outline</tt>" Creates grayscaled outline images by different operators (e.g. sobel, prewitt...).
+     "<tt>convolve</tt>" Use your own 3x3 matrix via option m=[[n,n,n],[n,n,n],[n,n,n]]
+     "<tt>blur</tt>" Bluring the image by (in build and extendable cvi_matrix object) convolution
+     "<tt>median</tt>" Smoothes grainy images by (in build and extendable cvi_matrix object) convolution
+     "<tt>sharpen</tt>" Makes image sharper by (in build and extendable cvi_matrix object) convolution
+     "<tt>sharper</tt>" Makes image even sharper by (in build and extendable cvi_matrix object) convolution
+     "<tt>bumplt</tt>" Embosses the image by (in build and extendable cvi_matrix object) convolution
+     "<tt>bumpbr</tt>" ... </pre></code>
+	<code><b>s</b> == FLOAT/OBJECT <b>multiplier(s)</b>  e.g. 0-255 Defaults to... <em>(optional)</em> </tt><pre>
+     <tt>1        </tt> if f=="<tt>zoomblur</tt>|<tt>spinblur</tt>" Distance (px)
+     <tt>1        </tt> if f=="<tt>smooth</tt>" Radius (px 1-10)
+     <tt>1        </tt> if f=="<tt>posterize</tt>" Number of levels (1-16)
+     <tt>1        </tt> if f=="<tt>threshold</tt>" Multiplier of 127 (0-2)
+     <tt>1        </tt> if f=="<tt>brightness</tt>|<tt>contrast</tt>|<tt>gamma</tt>|<tt>exposure</tt>" Multiplier of existing value (0-255)
+     <tt>[1,0]    </tt> if f=="<tt>motionblur</tt>" Distance (px) and angle (0-360)
+     <tt>[auto,0] </tt> if f=="<tt>convolve</tt>" or m!=null. Divisor of convolution result (-1==auto), 
+               useable for normalization and bias (0-255) for brightness addition
+     <tt>[1,0,    </tt> if f=="<tt>outline</tt>" Divisor of convolution result, bias (0-255) 
+     <tt>  'name']</tt> and operator ('sobel'|'scharr'|'prewitt'|'kirsh'|'roberts') 
+     <tt>[1,1,1,1]</tt> if f=="<tt>adjustrgba</tt>" red, green, blue, alpha. Multipliers of existing values (0-255)
+     <tt>[1,1,1,1]</tt> if f=="<tt>adjusthsba</tt>" hue, saturation, brightness, alpha. Multiply existing values (0-255)
+     <tt>[1,1,1,1]</tt> if f=="<tt>adjustyuva</tt>" luminance, blue–yellow chrominance, red–cyan chrominance, alpha. Multiply existing values (0-255)
+     <tt>[0,0,0,0,0]</tt>  f=="<tt>chromakey</tt>" hue (0-360) and hue tolerance, min saturation, min brightness, max brightness (0-100)
+     <tt>[[0,0,0],</tt> if f=="<tt>colorkey</tt>" equals rgb min and rgb max triplet (0-255)
+     <tt> [0,0,0]]</tt> 
+     <tt>[[1,1,1],</tt> if f=="<tt>mixrgb</tt>" Mix into r, g, b with...
+     <tt> [1,1,1]]</tt> ...bluegreen, redblue, greenred as triplets [0-255,0-255,0-255]
+     <tt>[[0,0,0],</tt> if f=="<tt>tritone</tt>" low|mid|high range colors as...
+     <tt> [0,0,0],</tt> ...rgb triplets [0-255,0-255,0-255]
+     <tt> [0,0,0]]</tt> </pre></code>
+	<code><b>m</b> == OBJECT <b>kernel matrix</b>  e.g. [[n,n,n],[n,n,n],[n,n,n]] Default: <tt>null</tt> <em>(optional)</em> </code><br />
+</dd>
+<p><br/></p>
+</li>
+<li><b>cvi_istack_lib.js</b> supports image stack capabilities. <small>[<i><a class="overlay lWOn lk" title="istack Example-Demo" href="istack.html">Example-Demo</a></i>]</small><br />
+<small><i>Provides fading image stacks for Images and CVI Effects</i></small>.
+
+<dl>
+	<dt>Set defaults</dt>
+  	<dd>
+		<code>cvi_istack.<b>defaultImagearray</b>&nbsp;= <tt>null</tt>; //OBJ e.g.  [{source:'image.jpg'}]</code><br />
+		<code>cvi_istack.<b>defaultMainwidth</b>&nbsp; = <tt>128</tt>; //INT 80-n (px width) </code><br />
+		<code>cvi_istack.<b>defaultMainheight</b> = <tt>128</tt>; //INT 80-n (px height)</code><br />
+		<code>cvi_istack.<b>defaultPlayframes</b> = <tt>20</tt>; //INT 1-100 equals frames to fade (* 30 milliseconds)</code><br />
+		<code>cvi_istack.<b>defaultPlaydelay</b>&nbsp; = <tt>5000</tt>; //INT 1000-n equals milliseconds (1/1000)</code><br />
+		<code>cvi_istack.<b>defaultLoadtimeout</b>= <tt>3000</tt>;	//INT 1000-n equals milliseconds (1/1000)</code><br />
+		<code>cvi_istack.<b>defaultNoiefade</b> &nbsp; = <tt>false</tt>;//BOOLEAN IE's Alpha filter produces rough edges</code><br />
+		<code>cvi_istack.<b>defaultPlayscript</b> = <tt>''</tt>; //STRING e.g. 'cvi_bevel'|'cvi_corner'|'cvi_curl'|'cvi_edge'|'cvi_glossy'|<br />
+		'cvi_glossy'|'cvi_reflex'|'cvi_slide'|'cvi_sphere'|'cvi_strip'</code><br />
+  		<p></p>
+		<em><small><b>imagearray</b> supports <tt>source</tt> <em>(required)</em> and <tt>options</tt> <em>(optional)</em>.</small></em>
+  		<p></p>
+	</dd>
+	<dt>Add stack</dt>
+  	<dd>
+  		<code>cvi_istack.add(<tt>element</tt>, <tt>options</tt>);</code><br />
+		<dl><dt><code><tt>element</tt>&nbsp; == div element</code></dt></dl>
+		<dl><dt><code><tt>options</tt> &nbsp;e.g. {<b>mainwidth</b>: <tt>128</tt>, <b>mainheight</b>: <tt>128</tt>, ...}</code></dt>
+		<dd>
+			<code><b>imagearray</b>&nbsp;== OBJ Default: <tt>null</tt></code><br />
+			<code><b>mainwidth</b>&nbsp; == INT <tt>32</tt> - <tt>n</tt> Default: <tt>128</tt></code><br />
+			<code><b>mainheight</b> == INT <tt>32</tt> - <tt>n</tt> Default: <tt>128</tt></code><br />
+			<code><b>playframes</b> == INT <tt>1</tt> - <tt>100</tt> Default: <tt>20</tt></code><br />
+			<code><b>playdelay</b>&nbsp; == INT <tt>1000</tt> - <tt>n</tt> Default: <tt>5000</tt></code><br />
+			<code><b>loadtimeout</b>== INT <tt>1000</tt> - <tt>n</tt> Default: <tt>3000</tt></code><br />
+			<code><b>noiefade</b> &nbsp; == BOL <tt>true</tt> or <tt>false</tt> Default: <tt>false</tt></code><br />
+			<code><b>playscript</b> == STR Default: <tt>''</tt></code><br />
+  		</dd></dl>
+		<dl><dt><em><small><b>Advices:</b> All images should have the same aspect ratio like the stack object.<br />
+		cvi_slide and cvi_strip creates generally 1:1 objects (using the larger dimension),<br />
+		cvi_sphere creates generally 1:1 objects (using the smaller dimension) and<br />
+		cvi_reflex creates objects with additional height (for the reflection).</small></em><br />
+		<em><small><b>Hint:</b> By adding a stack to a div element, the former content of the element will be overwritten.</small></em></dt></dl>
+  		<p></p>
+  	</dd>
+	<dt>Get some informations</dt>
+	<dd>
+		<code><tt>FLOAT</tt> &nbsp;= cvi_istack.version;</code><br />
+		<code><tt>STRING</tt> = cvi_istack.released;</code>
+  		<p></p>
+	</dd>
+	<dt>Play stack</dt>
+	<dd>
+		<code>cvi_istack.play(<tt>element</tt>);</code>
+  		<p></p>
+	</dd>
+	<dt>Pause stack</dt>
+	<dd>
+		<code>cvi_istack.pause(<tt>element</tt>);</code>
+  		<p></p>
+	</dd>
+	<dt>Remove stack</dt>
+	<dd>
+		<code>cvi_istack.remove(<tt>element</tt>);</code>
+  		<p></p>
+	</dd>
+	<dt>Example</dt>
+	<dd>
+  		<pre>
+&lt;script type="text/javascript"&gt;
+&lt;!--
+	var photos = new Array();
+	photos = [
+		{source:'images/fire.jpg', options:'{tilt:"l",text:"fire"}' },
+		{source:'images/jeans.jpg', options:'{tilt:"r",text:"jeans"}' },
+		{source:'images/rose.jpg', options:'{tilt:"l",text:"rose"}' },
+		{source:'images/swirl.jpg', options:'{tilt:"r",text:"swirl"}' },
+		{source:'images/fruits.jpg', options:'{tilt:"l",text:"fruits"}' },
+		{source:'images/heart.jpg' }
+	];
+	
+	function init_ImageStack() {
+		cvi_glossy.defaultPreserve=true;
+		cvi_glossy.defaultTilt='left';
+		cvi_glossy.defaultFontattr= [100,100,100];
+		cvi_istack.add(document.getElementById('wrapper_div'),{
+			imagearray: photos,
+			mainwidth: 200,
+			mainheight: 200,
+			playdelay: 3000,
+			playscript: 'cvi_glossy',
+			noiefade: true
+		});
+	}
+	
+	if(window.attachEvent) {
+		window.attachEvent("onload", init_ImageStack);
+	}else {
+		window.addEventListener("load", init_ImageStack, false);
+	}
+--&gt;
+&lt;/script&gt;
+  		</pre>
+	</dd>
+</dl>
+</li>
+</ul>
+
+<h2>Why use Javascript Image Glossy?</h2>
+
+<ul>
+<li>Fast and easy to implement. Just add class="glossy" to the image and your good to go.</li>
+<li>Don't need to spend time in an image editor creating images with effects.</li>
+<li>Works really well with forum avatars. Doesn't require additional server work.</li>
+<li>It's dead easy to change the attributes of the images.</li>
+<li>Free of charge use on non-commercial and private web sites.</li>
+</ul>
+
+<p>In older browsers, the script degrades and your visitors won't notice a thing.</p>
+
+<h2>Restrictions</h2>
+
+<p>Opera do not support printing of canvas.</p>
+
+<h2>History</h2>
+
+Version 1.8<ul><li>Added support for angled plane shine area</li></ul>
+Version 1.7<ul><li>Added support for Internet Explorer 9</li></ul>
+Version 1.6<ul><li>Extended distribution. Added the support libs "<b>cvi_filter_lib.js</b>" and "<b>cvi_istack_lib.js</b>"</li></ul>
+Version 1.5<ul><li>Modified code due to new opera (9.5) weaknesses</li></ul>
+Version 1.4<ul><li>Added scriptable lib version <b>cvi_glossy_lib.js</b></li></ul>
+Version 1.3<ul><li>Added support for img attributes:<br /><tt>id alt title src onclick</tt></li></ul>
+Version 1.2<ul><li>Added soft shadows for IE</li></ul>
+Version 1.1<ul><li>Added support for Internet Explorer 6/7</li></ul>
+Version 1.0<ul><li>Initial Release</li></ul>
+
+<h2>License</h2>
+
+<p>glossy.js, and cvi_glossy_lib.js are distributed under this <a href="LICENSE.txt">LICENSE</a>. License permits free of charge use on non-commercial and private web sites only under special conditions <em>(as described in the license)</em>. This license equals neither "<span style="text-decoration: line-through;">open source</span>" nor "<span style="text-decoration: line-through;">public domain</span>". There are also <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#118;&#105;&#064;&#110;&#101;&#116;&#122;&#103;&#101;&#115;&#116;&#097;&#046;&#100;&#101;">Commercial Software Licenses</a> available.</p>
+
+<h6>YOU AGREE TO ALL CONDITIONS OF THIS LICENCE AGREEMENT CONCERNING THE USE OF THE SOFTWARE BY ACCEPTING THIS LICENCE.
+<br>IF YOU DO NOT AGREE TO ALL CONDITIONS OF THIS AGREEMENT, YOU SHALL NOT INSTALL THE SOFTWARE, OR USE IT IN OTHER WAYS.</h6>
+
+<p><strong>Images used are copyrighted and are used for demonstration only.</strong></p>
+
+<p><a href="http://cvi.netzgesta.de/">cvi.netzgesta.de</a>&nbsp;&nbsp;also visit&nbsp;&nbsp;<a href="http://lab.netzgesta.de/">CVI-lab</a>, <a href="http://dev.netzgesta.de/">CVI-dev</a>, <a href="http://s5.netzgesta.de/">S5 Reloaded</a> and <a href="http://ajaxfilmdb.sourceforge.net/">AJAX-FilmDB</a></p>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div data-role="header" data-theme="e" >
+  <h1>Add a Comment</h1>
+</div>
+
+<div data-role="content">
+	<%= form_tag({:controller => "chatter_posts", :action => "addcomment"}, :method => "post") do %>
+	<div data-role="fieldcontain">
+		<!-- we were passed the feeditemid from the newsfeed. we pass it back to the 
+		     controller to allow us to insert it correct into chatter -->
+		<%= hidden_field_tag "feeditemid", params[:feeditemid] %>
+	   <%= text_field_tag "body" %>
+	
+	   <%= submit_tag 'Share' %>
+	</div>	
+	<% end %>
+</div>

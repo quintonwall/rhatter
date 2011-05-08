@@ -1,0 +1,17 @@
+<div data-role="header" data-theme="e">
+  <h1>New Status</h1>
+</div>
+
+<div data-role="content">
+	<%= form_tag({:controller => "chatter_posts", :action => "newstatus"}, :method => "post") do %>
+	<div data-role="fieldcontain">
+	   <%= text_field_tag "body" %>
+	
+	   <%= submit_tag 'Share' %>
+	</div>	
+	<% end %>
+</div>
+	
+	
+
+	  

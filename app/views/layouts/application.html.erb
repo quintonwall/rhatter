@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> <head>
+<title>Chatter REST API Sample</title> 
+<%= stylesheet_link_tag :all %> 
+<%= javascript_include_tag :defaults %> 
+  <%= javascript_include_tag :defaults %>
+    
+	<!-- glossy libs -->
+	<!-- script type="text/javascript" src="/glossy/cvi_glossy_lib.js"></script -->
+	
+
+	<!-- jquery libs -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/glossy/glossy.js"></script>
+<script type="text/javascript" src="/javascripts/rhatter.js"></script>
+	<script  src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+	
+	<script>
+		jQuery.noConflict();
+		
+		
+		
+	</script>
+<%= csrf_meta_tag %>
+
+<meta name = "format-detection" content = "telephone=yes">
+</head> 
+  <body>
+
+	<p></p>
+	<div data-role="page" data-theme="b">	
+     <%= yield %> 
+	</div>
+  </body>
+</html>
+

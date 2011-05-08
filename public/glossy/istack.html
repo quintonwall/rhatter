@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>cvi_istack_lib.js (demo example)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="Author" lang="en" content="www.netzgesta.de - Christian Effenberger">
+	<meta name="Publisher" lang="en" content="www.netzgesta.de">
+	<meta name="Copyright" lang="en" content="www.netzgesta.de - Christian Effenberger">
+	<meta name="Generator" lang="en" content="Christian Effenberger">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+	body { background: white; font-style: italic; font-family: Times,serif; color: gray; line-height: 1.3; margin: 2em; padding: 0;}
+	div.captions { text-align: center; font-style: normal; font-family: sans-serif; line-height: 1.1; color: #555555;}
+	div.wrapper { padding: 1em; margin: auto auto; background-color: #f0f0f0; border: 1px solid #f0f0f0; border-right: 1px solid silver; border-bottom: 1px solid silver;}
+	div.iwrapper { display: block; background: url(images/istack/indicator.gif) 50% 50% no-repeat; position: relative; width:200px; height:200px; margin: 0 .5em 0 0; padding: 0px;}
+	div.bwrapper { display: block; position: relative; width:32px; height:32px; margin: 0 0 0 .5em; padding: 0px;}
+</style>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<script type="text/javascript" src="cvi_glossy_lib.js"></script>
+	<script type="text/javascript" src="cvi_istack_lib.js"></script>
+<script type="text/javascript">
+<!--
+var browser = new Array();
+browser = [
+	{source:'images/istack/browser_1.png'},
+	{source:'images/istack/browser_2.png'},
+	{source:'images/istack/browser_3.png'},
+	{source:'images/istack/browser_4.png'}
+];
+var photos = new Array();
+photos = [
+	{source:'images/istack/fire.jpg', options:'{tilt:"l",text:"fire"}' },
+	{source:'images/istack/jeans.jpg', options:'{tilt:"r",text:"jeans",fontattr: [50,400,70]}' },
+	{source:'images/istack/rose.jpg', options:'{tilt:"l",text:"rose",fontattr: [50,50,120]}' },
+	{source:'images/istack/coffee.jpg', options:'{tilt:"r",text:"coffee",textcolor:"#603000"}' },
+	{source:'images/istack/fruits.jpg', options:'{tilt:"l",text:"fruits",fontattr: [200,100,120]}' },
+	{source:'images/istack/heart.jpg', options:'{tilt:"r",text:"heart",textcolor:"#800000"}' }
+];
+function init_ImageStack() {
+	cvi_istack.add(document.getElementById('browsers'),{
+		imagearray: browser,
+		mainwidth: 32,
+		mainheight: 32,
+		playdelay: 1000
+	});
+	cvi_istack.add(document.getElementById('stack'),{
+		imagearray: photos,
+		mainwidth: 200,
+		mainheight: 200,
+		playdelay: 4000,
+		playscript: 'cvi_glossy',
+		noiefade: true
+	});
+}
+if(window.attachEvent) {
+	window.attachEvent("onload", init_ImageStack);
+}else {
+	window.addEventListener("load", init_ImageStack, false);
+}
+-->
+</script>
+</head>
+<body>
+<div class="wrapper">
+<div class="captions" style="float: right; font-size: 80%"><div id="browsers" class="bwrapper" title="supported browsers"><img src="images/istack/browser_0.png" width="32" height="32" border="0" alt="" /></div>Image<br>stack</div>
+<big>cvi_istack_lib.js (demonstration)</big><br />
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+<div class="captions" style="float: left;"><div id="stack" class="iwrapper"><img src="images/istack/dummy.jpg" width="198" height="198" border="1" alt="" /></div>Effect stack</div>
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. 
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+</div>
+</body>
+</html>

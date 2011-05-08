@@ -1,0 +1,35 @@
+Rail 3 + JQuerymobile app using the Chatter REST API
+
+This sample app uses the Chatter REST API
+to implement a Chatter client in Rails3. In addition, it 
+uses jquerymobile to make this app accessible on just about any
+mobile device.
+
+Setup:
+
+The app uses Omniauth for OAuth2 authentication. You will need to change
+the consumer key and consumer secret which the forcedotcom strategy uses
+to authorize against a Force.com remote access provider. Settings are
+contained within config/initializers/omniauth.rb
+
+You will also need to change the site url in lib/forcedotcom.rb. Right
+now it points to a pre-release org which has the Chatter REST API enabled.
+
+Yes I know I need to move these into env settings. I'll get around to it soon :)
+
+Finally, as the remote access provider requires a https callback url, you
+need to create your certs and keys for your local web server. I have already
+set up the rails web server (WEBrick) with all the script changes. As long
+as you drop your keys and certs into the lib/certs dir you should be good to go
+
+
+Using the app:
+
+Once you have everything up and running on your local machine, navigate to 
+the default url (https://localhost:3000/) and you should be all good to go!
+
+
+Have fun
+@quintonwall
+
+
