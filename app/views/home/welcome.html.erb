@@ -1,0 +1,13 @@
+<div data-role="header"> 
+	<!--
+	I wanted to use a link_to but that only does a GET, and I needed a POST
+	-->
+		<%= button_to 'Loginz', "auth/forcedotcom", "data-icon" => "gear", "class" => "ui-button-left",  "data-theme" => "b" %>	
+    
+   <!-- we need a post, but using the default button messes up the layout for 
+        for jquery mobile -->
+  </div>
+
+<div data-role="content">
+	 
+	</div>
