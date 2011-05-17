@@ -15934,3 +15934,61 @@ Started GET "/my_chatter/mynewsfeed?nextpageurl=%2Fservices%2Fdata%2Fv22.0%2Fcha
   Parameters: {"nextpageurl"=>"/services/data/v22.0/chatter/feeds/news/005x0000000JOsFAAW/feed-items?page=2011-05-03T20:17:19Z,0D5x00000001OEjCAM"}
 Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.5ms)
 Completed 200 OK in 3136ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-11 16:56:19 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-05-11 16:56:21 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-17 11:15:31 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-05-17 11:15:34 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-17 12:23:08 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-05-17 12:23:09 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-17 12:27:06 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-05-17 12:27:07 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-17 12:30:09 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-05-17 12:30:10 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxsmIEeqM9PiThSEQT3sAawHhfkh.LfWPW4cFmpM.KCFXo5_9V2_mG8lRBT3Dy4ULjK.B9Aw%3D%3D" for 127.0.0.1 at 2011-05-17 12:30:11 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxsmIEeqM9PiThSEQT3sAawHhfkh.LfWPW4cFmpM.KCFXo5_9V2_mG8lRBT3Dy4ULjK.B9Aw==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-05-17 12:30:12 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 864ms (Views: 69.6ms | ActiveRecord: 0.0ms)

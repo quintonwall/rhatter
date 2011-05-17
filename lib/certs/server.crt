@@ -1,49 +1,14 @@
-Certificate:
-    Data:
-        Version: 1 (0x0)
-        Serial Number: 1 (0x1)
-        Signature Algorithm: md5WithRSAEncryption
-        Issuer: C=US, ST=CA, L=monterey, O=quintinc, OU=quintinc, CN=Quinton Wall/emailAddress=qwall@salesforce.com
-        Validity
-            Not Before: Aug  2 19:57:13 2010 GMT
-            Not After : Aug  2 19:57:13 2011 GMT
-        Subject: C=US, ST=CA, L=Monterey, O=quintinc, OU=quintinc, CN=Quinton Wall/emailAddress=qwall@salesforce.com
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-            RSA Public Key: (1024 bit)
-                Modulus (1024 bit):
-                    00:c9:ba:7f:54:09:5c:a9:e5:b4:9c:85:c6:ce:c0:
-                    b8:a0:52:4a:84:8b:11:b2:38:b7:8a:fe:60:16:a2:
-                    ba:c4:eb:8c:0a:67:25:d8:ec:de:d2:22:d0:02:cb:
-                    5e:3e:9f:6b:50:aa:7d:1e:c7:b9:3a:38:14:93:1d:
-                    dc:d5:00:db:c1:c8:41:9b:bd:49:5a:29:13:6c:f0:
-                    49:82:59:5c:9e:75:aa:51:e0:8f:0b:50:74:fc:62:
-                    8a:a4:80:8f:ed:81:d1:8e:6a:a9:71:70:65:8f:e1:
-                    00:85:a5:e2:22:5f:45:76:50:90:47:b4:dd:6f:02:
-                    04:08:a1:9f:aa:c1:fd:2b:23
-                Exponent: 65537 (0x10001)
-    Signature Algorithm: md5WithRSAEncryption
-        4d:48:aa:c1:b3:55:88:aa:43:6c:5e:17:94:79:95:c7:e7:76:
-        7c:0b:14:fc:e3:e9:7f:bf:5e:ab:4b:25:7c:9c:29:ac:93:a4:
-        38:9e:bf:20:53:af:0c:14:0c:e3:3e:7a:da:f8:71:67:00:6b:
-        46:8a:fe:87:74:1c:bb:4d:f4:f1:6c:b9:d1:30:e1:fd:fe:76:
-        b3:3f:aa:05:ab:75:aa:18:61:5d:b0:c1:eb:fe:f7:a6:09:55:
-        c8:92:5f:e8:15:85:00:7f:45:c3:ef:43:43:d0:bb:31:11:fc:
-        58:ab:d0:f4:ae:e1:1a:77:fd:94:49:1c:0a:1c:cc:47:fc:ce:
-        89:d1
 -----BEGIN CERTIFICATE-----
-MIICjzCCAfgCAQEwDQYJKoZIhvcNAQEEBQAwgY8xCzAJBgNVBAYTAlVTMQswCQYD
-VQQIEwJDQTERMA8GA1UEBxMIbW9udGVyZXkxETAPBgNVBAoTCHF1aW50aW5jMREw
-DwYDVQQLEwhxdWludGluYzEVMBMGA1UEAxMMUXVpbnRvbiBXYWxsMSMwIQYJKoZI
-hvcNAQkBFhRxd2FsbEBzYWxlc2ZvcmNlLmNvbTAeFw0xMDA4MDIxOTU3MTNaFw0x
-MTA4MDIxOTU3MTNaMIGPMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExETAPBgNV
-BAcTCE1vbnRlcmV5MREwDwYDVQQKEwhxdWludGluYzERMA8GA1UECxMIcXVpbnRp
-bmMxFTATBgNVBAMTDFF1aW50b24gV2FsbDEjMCEGCSqGSIb3DQEJARYUcXdhbGxA
-c2FsZXNmb3JjZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMm6f1QJ
-XKnltJyFxs7AuKBSSoSLEbI4t4r+YBaiusTrjApnJdjs3tIi0ALLXj6fa1CqfR7H
-uTo4FJMd3NUA28HIQZu9SVopE2zwSYJZXJ51qlHgjwtQdPxiiqSAj+2B0Y5qqXFw
-ZY/hAIWl4iJfRXZQkEe03W8CBAihn6rB/SsjAgMBAAEwDQYJKoZIhvcNAQEEBQAD
-gYEATUiqwbNViKpDbF4XlHmVx+d2fAsU/OPpf79eq0slfJwprJOkOJ6/IFOvDBQM
-4z562vhxZwBrRor+h3Qcu0308Wy50TDh/f52sz+qBat1qhhhXbDB6/73pglVyJJf
-6BWFAH9Fw+9DQ9C7MRH8WKvQ9K7hGnf9lEkcChzMR/zOidE=
+MIICKTCCAZICCQCAEj8+N+cziDANBgkqhkiG9w0BAQUFADBZMQswCQYDVQQGEwJB
+VTETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0
+cyBQdHkgTHRkMRIwEAYDVQQDDAlsb2NhbGhvc3QwHhcNMTEwNTE3MTkyNjE2WhcN
+MTQwMzA2MTkyNjE2WjBZMQswCQYDVQQGEwJBVTETMBEGA1UECAwKU29tZS1TdGF0
+ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMRIwEAYDVQQDDAls
+b2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKT6jfE/1E+niOZ5
+W3iESwA7jUBSQFrQzyzv0IwNNg9vEbB24XqKUPaq6i5875bPl4r1I8v0Rh/wyE1w
+7dTZwavGAaRXqiop7H7rTAvNArC91cANla1aIJIqUS2XsuTmkPmnOH4Qy+ekByDw
+vGWBN8bxMzMCq0ly52UwIK0SSKdlAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAeepm
+NzMEWi2L9itD+EnrBswGtnekRRnuEhEe4sW6kepImCm1mJHPHTLMuZzjYTnPll6U
+tvClPyZPBFx/967heMmNiqVSVkLNTIKbpk2Y9PJQR80/LaDrhtXmegNTFJ7KH3m4
+KT5oS2taJZEC9JNhTMIAdQkIPQpmT3DO3OzU7Hc=
 -----END CERTIFICATE-----
