@@ -14,7 +14,7 @@
 			<!-- would like to upload a new pic from the camera using phonegap:
 			  http://docs.phonegap.com/phonegap_camera_camera.md.html
 			-->
-				<%= image_tag(ENV['sfdc_instance_url']+@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
 		</td>
 		<td>
 			<b><%= @userInfo["name"] %></b> says:

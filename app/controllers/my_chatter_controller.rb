@@ -4,8 +4,9 @@ class MyChatterController < ApplicationController
   
   def home
     @userInfo = Chatter.get_my_info
-    #puts @userInfo["phoneNumbers"]
- 
+    puts "-------------"
+    puts @userInfo
+ puts "-------------"
    end
   
   def newstatus
@@ -32,11 +33,15 @@ class MyChatterController < ApplicationController
     else
         @feed = Chatter.get_my_newsfeed
     end
-        puts "NEXT"
-        puts @feed["feedItems"]["nextPageUrl"]
+        #puts "NEXT"
+        #puts @feed["feedItems"]["nextPageUrl"]
         
-        puts "PREV"
-        puts @feed["feedItems"]["previousPageUrl"]
+        #puts "PREV"
+        #puts @feed["feedItems"]["previousPageUrl"]
+        
+         puts "-------------"
+         puts @feed
+         puts "-------------"
    
   end
   

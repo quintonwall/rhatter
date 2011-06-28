@@ -10,7 +10,7 @@ module OmniAuth
      
        def initialize(app, client_id = nil, client_secret = nil, options = {}, &block)
         client_options = {
-          :site => "https://prerellogin.pre.salesforce.com",
+          :site => "https://login.salesforce.com",
           :authorize_path      => "/services/oauth2/authorize",
           :access_token_path   => "/services/oauth2/token"
         }

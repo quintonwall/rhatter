@@ -13,7 +13,8 @@
 			</tr>
 			<tr>
 				<td width="60px">
-					<%= image_tag(ENV['sfdc_instance_url']+post["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
+					<!-- note. appending the token to the URL should ONLY be used via HTTPS, otherwise you expose the token in the GET request -->
+					<%= image_tag(post["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
 				
 				</td>
 				<td>
@@ -36,7 +37,7 @@
 					<div data-role="collapsible" data-collapsed="true" >
 						<h3><%=post["comments"]["total"] %> Comments | <%=post["likes"]["total"] %> Likes</h3>
 						<% post["comments"]["comments"].each do |c| %>
-							<%= image_tag(ENV['sfdc_instance_url']+c["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
+							<%= image_tag(c["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
 							<b><%= c["user"]["name"] %></b> &nbsp; 
 							<%= c["body"]["text"] %><br/>
 						<% end %>

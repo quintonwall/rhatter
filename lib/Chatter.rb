@@ -16,19 +16,26 @@ class Chatter
   def self.root_url
     @root_url = ENV['sfdc_instance_url']+"/services/data/v"+ENV['sfdc_api_version']+"/chatter"
   end
+  
+
 
   def self.get_users_info(id)
     Chatter.set_headers
-    get(Chatter.root_url+"/users/"+id)
+    @resp = get(Chatter.root_url+"/users/"+id)
+    Chatter.log_response(@resp, "get_user_info")
+    return @resp
   end
 
   def self.get_my_info
+    
     Chatter.get_users_info("me")
   end
   
   def self.get_newsfeed(id)
     Chatter.set_headers
-    get(Chatter.root_url+"/feeds/news/"+id)
+    @resp = get(Chatter.root_url+"/feeds/news/"+id)
+    Chatter.log_response(@resp, "get_newsfeed")
+    return @resp
   end
     
   def self.get_my_newsfeed
@@ -43,9 +50,15 @@ class Chatter
     post(Chatter.root_url+"/feed-items/"+id+"/likes")
   end
   
-  def self.add_comment(comment)
-    post(Chatter.root_url+"/feed-items/"+comment.feeditemid+"/comments?text="+CGI::escape(comment.body))
+  def self.unlike_feeditem(id)
+    delete(Chatter.root_url+"/feed-items/"+id+"/likes")
   end
+  
+  def self.add_comment(comment)
+    post(Chatter.root_url+"/feed-items/"+comment.feeditemid+
+         "/comments?text="+CGI::escape(comment.body))
+  end
+  
   
   #pre rel chatter page results returns the incorrect json response. it should be [feeditems][items]
   #like everything else, but it is just [items] so lets wrap it to make it consistent
@@ -57,5 +70,11 @@ class Chatter
       
        @feed["feedItems"] = get(ENV['sfdc_instance_url']+refpath)
        return @feed
+  end
+  
+  def self.log_response(resp, method_name)
+    CHATTER_LOGGER.debug("\n------START "+method_name+"---------\n")
+    CHATTER_LOGGER.debug(resp)
+    CHATTER_LOGGER.debug("\n------END "+method_name+"---------\n")
   end
 end
