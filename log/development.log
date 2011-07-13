@@ -16842,3 +16842,121 @@ Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-06-28 08:01:14 -0700
   Processing by MyChatterController#mynewsfeed as HTML
 Rendered my_chatter/mynewsfeed.html.erb within layouts/application (12.4ms)
 Completed 200 OK in 264ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-28 09:46:06 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-06-28 09:46:07 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAtzL4gPTApB.FdUduiflb5R3pbXSfeaKHzoXRsb68_KDiIxxsuA%3D%3D" for 127.0.0.1 at 2011-06-28 09:46:29 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAtzL4gPTApB.FdUduiflb5R3pbXSfeaKHzoXRsb68_KDiIxxsuA==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-06-28 09:46:30 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 693ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/newstatus" for 127.0.0.1 at 2011-06-28 10:14:11 -0700
+  Processing by MyChatterController#newstatus as HTML
+Rendered my_chatter/newstatus.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/newstatus" for 127.0.0.1 at 2011-06-28 10:14:17 -0700
+  Processing by ChatterPostsController#newstatus as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yXkWFqLkmaCOZI5BeIURkjNMZmhECCjSBMV+d1av0ck=", "body"=>"new status fun!", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1369ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-06-28 10:14:19 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 610ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-06-28 10:14:22 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 573ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/newcomment?feeditemid=0D58000000GhWnbCAF" for 127.0.0.1 at 2011-06-28 10:14:37 -0700
+  Processing by ChatterPostsController#newcomment as HTML
+  Parameters: {"feeditemid"=>"0D58000000GhWnbCAF"}
+Rendered chatter_posts/newcomment.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/addcomment" for 127.0.0.1 at 2011-06-28 10:14:48 -0700
+  Processing by ChatterPostsController#addcomment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yXkWFqLkmaCOZI5BeIURkjNMZmhECCjSBMV+d1av0ck=", "feeditemid"=>"0D58000000GhWnbCAF", "body"=>"fun!", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 1728ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-06-28 10:14:50 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 400ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/like?feeditemid=0D58000000GhWnbCAF" for 127.0.0.1 at 2011-06-28 10:43:59 -0700
+  Processing by ChatterPostsController#like as HTML
+  Parameters: {"feeditemid"=>"0D58000000GhWnbCAF"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 513ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-06-28 10:43:59 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 1130ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 09:22:18 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-08 09:22:21 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxzp43SUYOZpE6lRwCpGDa_GnDFmQwfc5x5Sg3Y1S4Kg1cHq6UpGCi1apdlZX0WapRkJaAfA%3D%3D" for 127.0.0.1 at 2011-07-08 09:22:24 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxzp43SUYOZpE6lRwCpGDa_GnDFmQwfc5x5Sg3Y1S4Kg1cHq6UpGCi1apdlZX0WapRkJaAfA==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-08 09:22:25 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (86.8ms)
+Completed   in 338ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    14: 			<!-- would like to upload a new pic from the camera using phonegap:
+    15: 			  http://docs.phonegap.com/phonegap_camera_camera.md.html
+    16: 			-->
+    17: 				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+  app/views/my_chatter/home.html.erb:17:in `_app_views_my_chatter_home_html_erb___4234912483199678347_2169366100_1424747467015370205'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.9ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (72.2ms)

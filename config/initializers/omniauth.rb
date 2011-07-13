@@ -15,6 +15,6 @@ end
 
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :forcedotcom, 'consumer-public', 'consumer-secret'
+  provider :forcedotcom, '3MVG9CVKiXR7Ri5oh_84IylskqO10nW9n6rcGnbQeJ7Z0K91Uzz9TOwukCMYeGlvUsCWlr4ltIjM52iaPf8ON', '8195020619553807815'
   
 end
