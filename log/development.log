@@ -16960,3 +16960,594 @@ ActionView::Template::Error (can't convert String into Integer):
 Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
 Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.9ms)
 Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (72.2ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 05:54:07 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 05:54:08 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxOui6ixKEPBtPeMrQZxON4WvOlqjLTnsB3K9poPLZTA0rdFYh4XRcPp6keGi7qW7U0UjD5w%3D%3D" for 127.0.0.1 at 2011-07-13 05:54:10 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxOui6ixKEPBtPeMrQZxON4WvOlqjLTnsB3K9poPLZTA0rdFYh4XRcPp6keGi7qW7U0UjD5w==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 05:54:11 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (42.2ms)
+Completed   in 694ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    14: 			<!-- would like to upload a new pic from the camera using phonegap:
+    15: 			  http://docs.phonegap.com/phonegap_camera_camera.md.html
+    16: 			-->
+    17: 				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+  app/views/my_chatter/home.html.erb:17:in `_app_views_my_chatter_home_html_erb__2559793948969535142_2181816780_4359162520125402467'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.8ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.2ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 05:55:27 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (1.6ms)
+Completed   in 721ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    12: 	<tr>
+    13: 		<td align="center">
+    14: 			
+    15: 				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+    16: 		</td>
+    17: 		<td>
+    18: 			<b><%= @userInfo["name"] %></b> says:
+  app/views/my_chatter/home.html.erb:15:in `_app_views_my_chatter_home_html_erb__2559793948969535142_2181193040_4359162520125402467'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (36.9ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (77.6ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 05:57:34 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (1.7ms)
+Completed   in 807ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    17: 				
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+    21: 			<i><%= @userInfo["currentStatus"]["body"]["text"]%></i>
+    22: 		</td>
+    23: 	</tr>
+  app/views/my_chatter/home.html.erb:20:in `_app_views_my_chatter_home_html_erb__2559793948969535142_2181244320_4359162520125402467'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (76.3ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (83.8ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 05:57:38 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (1.2ms)
+Completed   in 587ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    17: 				
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+    21: 			<i><%= @userInfo["currentStatus"]["body"]["text"]%></i>
+    22: 		</td>
+    23: 	</tr>
+  app/views/my_chatter/home.html.erb:20:in `_app_views_my_chatter_home_html_erb__2559793948969535142_2181275640_4359162520125402467'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (59.2ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 05:58:51 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 05:58:51 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxOui6ixKEPBtPeMrQZxON4TcWJJTeSRGjxq6sJJQuBYS43n5Ccsu4HnOEjHc70ndJDryR5Q%3D%3D" for 127.0.0.1 at 2011-07-13 05:58:52 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxOui6ixKEPBtPeMrQZxON4TcWJJTeSRGjxq6sJJQuBYS43n5Ccsu4HnOEjHc70ndJDryR5Q==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 05:58:53 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (2.1ms)
+Completed   in 590ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    14: 			<!-- would like to upload a new pic from the camera using phonegap:
+    15: 			  http://docs.phonegap.com/phonegap_camera_camera.md.html
+    16: 			-->
+    17: 				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+  app/views/my_chatter/home.html.erb:17:in `_app_views_my_chatter_home_html_erb__2559793948969535142_2155847380_4359162520125402467'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (57.5ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 06:04:25 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 06:04:25 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAt2bt.wb7VaHfMRgjpwKYxieE6c6AHxOK9D0AJBovc6tBOFkCrw%3D%3D" for 127.0.0.1 at 2011-07-13 06:04:45 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAt2bt.wb7VaHfMRgjpwKYxieE6c6AHxOK9D0AJBovc6tBOFkCrw==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 06:04:46 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 1039ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 06:14:06 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 1446ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 06:15:03 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 5653ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 06:15:14 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 725ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 192.168.0.55 at 2011-07-13 14:18:02 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://192.168.0.165:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 192.168.0.55 at 2011-07-13 14:18:04 -0700
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 14:20:16 -0700
+  Processing by MyChatterController#home as HTML
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 14:20:16 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 14:20:16 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAt0GPCNxtDLGwLNMVToMrQ72z4ixQOK7MlzZOAzaw7nX1XTy7Cw%3D%3D" for 127.0.0.1 at 2011-07-13 14:20:28 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAt0GPCNxtDLGwLNMVToMrQ72z4ixQOK7MlzZOAzaw7nX1XTy7Cw==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 14:20:29 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 1047ms (Views: 216.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:30:53 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (105.3ms)
+Completed   in 816ms
+
+ActionView::Template::Error (can't convert String into Integer):
+    14: 			<!-- would like to upload a new pic from the camera using phonegap:
+    15: 			  http://docs.phonegap.com/phonegap_camera_camera.md.html
+    16: 			-->
+    17: 				<%= image_tag(@userInfo["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], :alt => @userInfo["name"], "class" => "glossy" )%>
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+  app/views/my_chatter/home.html.erb:17:in `_app_views_my_chatter_home_html_erb___2048159643372237148_2177794140__1184300992110125731'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.0ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 17:31:06 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 17:31:06 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAtxPkfvjUDsLyuEyW5aMmUxzNSnbKumliZfGgScfoPHhtUZR9yw%3D%3D" for 127.0.0.1 at 2011-07-13 17:31:16 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAtxPkfvjUDsLyuEyW5aMmUxzNSnbKumliZfGgScfoPHhtUZR9yw==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:31:17 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 501ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/newstatus" for 127.0.0.1 at 2011-07-13 17:31:37 -0700
+  Processing by MyChatterController#newstatus as HTML
+Rendered my_chatter/newstatus.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/newstatus" for 127.0.0.1 at 2011-07-13 17:31:43 -0700
+  Processing by ChatterPostsController#newstatus as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ApB7Q9o1x14yMZvN0JwlCJtq5Gqyfgddyj1R9xz7Vgw=", "body"=>"hello boston", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1201ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:31:44 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 475ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 17:32:09 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 846ms (Views: 161.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/like?feeditemid=0D58000000GhH9fCAF" for 127.0.0.1 at 2011-07-13 17:32:25 -0700
+  Processing by ChatterPostsController#like as HTML
+  Parameters: {"feeditemid"=>"0D58000000GhH9fCAF"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 596ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 17:32:26 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 944ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/newcomment?feeditemid=0D58000000HcXVACA3" for 127.0.0.1 at 2011-07-13 17:32:49 -0700
+  Processing by ChatterPostsController#newcomment as HTML
+  Parameters: {"feeditemid"=>"0D58000000HcXVACA3"}
+Rendered chatter_posts/newcomment.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/addcomment" for 127.0.0.1 at 2011-07-13 17:32:54 -0700
+  Processing by ChatterPostsController#addcomment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ApB7Q9o1x14yMZvN0JwlCJtq5Gqyfgddyj1R9xz7Vgw=", "feeditemid"=>"0D58000000HcXVACA3", "body"=>"i like the new you", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 1042ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 17:32:56 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 704ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:34:44 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 693ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/addcomment" for 127.0.0.1 at 2011-07-13 17:34:45 -0700
+
+ActionController::RoutingError (No route matches "/chatter_posts/addcomment"):
+  
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 17:34:58 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 17:34:58 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAtyvxjNp5RfB5I2VkV3z92b6r7LZwT.Np1QK2hklEjvnN9nV4_g%3D%3D" for 127.0.0.1 at 2011-07-13 17:34:59 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAtyvxjNp5RfB5I2VkV3z92b6r7LZwT.Np1QK2hklEjvnN9nV4_g==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:35:00 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 526ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 17:35:03 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 685ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:35:13 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 583ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/newstatus" for 127.0.0.1 at 2011-07-13 17:35:45 -0700
+  Processing by MyChatterController#newstatus as HTML
+Rendered my_chatter/newstatus.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-13 17:37:26 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-13 17:37:26 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAt27PsYl1ewuwdljL0az.aOVchc2fcsWnrN0nUpqaGZnkucQXCA%3D%3D" for 127.0.0.1 at 2011-07-13 17:37:27 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAt27PsYl1ewuwdljL0az.aOVchc2fcsWnrN0nUpqaGZnkucQXCA==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:37:27 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 498ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-13 17:37:32 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 881ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-13 17:38:05 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 648ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mygroups" for 127.0.0.1 at 2011-07-13 17:38:09 -0700
+  Processing by MyChatterController#mygroups as HTML
+Rendered my_chatter/mygroups.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-14 13:40:00 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-07-14 13:40:02 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxVyeZrusRBne.d3cPETcAt8at4MSU4V321OuOd6.PVEujo1pSVW0CQOwiT19kP7gcNoymIg%3D%3D" for 127.0.0.1 at 2011-07-14 13:40:11 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxVyeZrusRBne.d3cPETcAt8at4MSU4V321OuOd6.PVEujo1pSVW0CQOwiT19kP7gcNoymIg==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 0ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-14 13:40:12 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 921ms (Views: 134.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/newstatus" for 127.0.0.1 at 2011-07-14 13:41:20 -0700
+  Processing by MyChatterController#newstatus as HTML
+Rendered my_chatter/newstatus.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 51ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/newstatus" for 127.0.0.1 at 2011-07-14 13:41:26 -0700
+  Processing by ChatterPostsController#newstatus as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LyGC4NwDHHUR2ZbkEvSkkrEmQXIE9OUXX+PFggXeERc=", "body"=>"this really is the poo", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1411ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-07-14 13:41:27 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 719ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-14 13:41:34 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 1372ms (Views: 302.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/like?feeditemid=0D58000000Hct9NCAR" for 127.0.0.1 at 2011-07-14 13:41:42 -0700
+  Processing by ChatterPostsController#like as HTML
+  Parameters: {"feeditemid"=>"0D58000000Hct9NCAR"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 681ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-14 13:41:43 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 983ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chatter_posts/newcomment?feeditemid=0D58000000Hct9NCAR" for 127.0.0.1 at 2011-07-14 13:41:47 -0700
+  Processing by ChatterPostsController#newcomment as HTML
+  Parameters: {"feeditemid"=>"0D58000000Hct9NCAR"}
+Rendered chatter_posts/newcomment.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/addcomment" for 127.0.0.1 at 2011-07-14 13:41:50 -0700
+  Processing by ChatterPostsController#addcomment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LyGC4NwDHHUR2ZbkEvSkkrEmQXIE9OUXX+PFggXeERc=", "feeditemid"=>"0D58000000Hct9NCAR", "body"=>"", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 640ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-14 13:41:50 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 1016ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chatter_posts/addcomment" for 127.0.0.1 at 2011-07-14 13:41:59 -0700
+  Processing by ChatterPostsController#addcomment as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LyGC4NwDHHUR2ZbkEvSkkrEmQXIE9OUXX+PFggXeERc=", "feeditemid"=>"0D58000000Hct9NCAR", "body"=>"go sox!", "commit"=>"Share"}
+Redirected to https://localhost:3000/my_chatter/mynewsfeed
+Completed 302 Found in 852ms
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-07-14 13:42:00 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 906ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-09-07 19:39:38 -0700
+  Processing by MyChatterController#home as HTML
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-07 19:39:41 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-09-07 19:39:41 -0700
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-09-07 19:43:07 -0700
+  Processing by MyChatterController#home as HTML
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-07 19:43:07 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-09-07 19:43:07 -0700
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-09 13:21:00 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-09-09 13:21:02 -0700
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <top (required)> at /Users/qwall/Dropbox/git/rails-chatter-api/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-09 13:23:50 -0700
+  Processing by SessionsController#authenticate as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-09-09 13:23:51 -0700
+
+
+Started GET "/auth/forcedotcom/callback?code=aPrxzp43SUYOZpEjE1bit8B28Q8uVaoUAuSfZiL4oBDJ1FRLUFhOM2V.cFlThVaIaRseTazL6Q%3D%3D" for 127.0.0.1 at 2011-09-09 13:23:56 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"aPrxzp43SUYOZpEjE1bit8B28Q8uVaoUAuSfZiL4oBDJ1FRLUFhOM2V.cFlThVaIaRseTazL6Q==", "provider"=>"forcedotcom"}
+Redirected to https://localhost:3000/my_chatter/home
+Completed 302 Found in 1ms
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-09-09 13:23:58 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (88.2ms)
+Completed   in 756ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    18: 		</td>
+    19: 		<td>
+    20: 			<b><%= @userInfo["name"] %></b> says:
+    21: 			<i><%= @userInfo["currentStatus"]["body"]["text"]%></i>
+    22: 		</td>
+    23: 	</tr>
+    24: </table>
+  app/views/my_chatter/home.html.erb:21:in `_app_views_my_chatter_home_html_erb__4497554400406649136_2169686480_3752810561008359993'
+
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (47.7ms)
+Rendered /Users/qwall/.rvm/gems/ruby-1.9.2-p180@rails3/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (151.2ms)
+
+
+Started GET "/my_chatter/home" for 127.0.0.1 at 2011-09-09 13:25:44 -0700
+  Processing by MyChatterController#home as HTML
+Rendered my_chatter/home.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 579ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_chatter/mynewsfeed" for 127.0.0.1 at 2011-09-09 13:25:51 -0700
+  Processing by MyChatterController#mynewsfeed as HTML
+Rendered my_chatter/mynewsfeed.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 378ms (Views: 75.3ms | ActiveRecord: 0.0ms)
