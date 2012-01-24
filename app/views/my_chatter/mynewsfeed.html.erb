@@ -14,7 +14,7 @@
 			<tr>
 				<td width="60px">
 					<!-- note. appending the token to the URL should ONLY be used via HTTPS, otherwise you expose the token in the GET request -->
-					<%= image_tag(post["parent"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
+					<%= image_tag(post["actor"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
 				
 				</td>
 				<td>
