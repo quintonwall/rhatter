@@ -37,7 +37,7 @@
 					<div data-role="collapsible" data-collapsed="true" >
 						<h3><%=post["comments"]["total"] %> Comments | <%=post["likes"]["total"] %> Likes</h3>
 						<% post["comments"]["comments"].each do |c| %>
-							<%= image_tag(c["parent"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
+							<%= image_tag(c["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
 							<b><%= c["parent"]["name"] %></b> &nbsp; 
 							<%= c["body"]["text"] %><br/>
 						<% end %>
