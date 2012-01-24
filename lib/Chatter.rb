@@ -43,7 +43,7 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-    post(Chatter.root_url+"/feeds/news/me/feed-items?text="+CGI::escape(post.body))
+    post(Chatter.root_url+"/feeds/user-profile/me/feed-items?text="+CGI::escape(post.body))
   end
   
   def self.like_feeditem(id)
