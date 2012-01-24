@@ -44,11 +44,12 @@ class Chatter
   
   def self.set_my_user_status(post)
    
-   puts  "{ "+ :body => { :messageSegments => [
+   puts "------START--------"
+   puts  :body => { :messageSegments => [
                   :type => 'Text',
                   :text => post.body
                 ]
-             }+" }".to_json
+             }.to_json
       
              
     HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items",
