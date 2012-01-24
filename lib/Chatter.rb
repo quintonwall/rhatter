@@ -33,7 +33,7 @@ class Chatter
   
   def self.get_newsfeed(id)
     Chatter.set_headers
-    @resp = get(Chatter.root_url+"/feeds/news/"+id)
+    @resp = get(Chatter.root_url+"/feeds/news/"+id+"/feed-items")
     Chatter.log_response(@resp, "get_newsfeed")
     return @resp
   end
