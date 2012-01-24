@@ -14,11 +14,11 @@
 			<tr>
 				<td width="60px">
 					<!-- note. appending the token to the URL should ONLY be used via HTTPS, otherwise you expose the token in the GET request -->
-					<%= image_tag(post["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
+					<%= image_tag(post["parent"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => post["id"]) %>
 				
 				</td>
 				<td>
-	  				<b><%= post["user"]["name"] %></b><br/>
+	  				<b><%= post["parent"]["name"] %></b><br/>
 	  				<%= post["body"]["text"] %><br/>
 					<div data-role="controlgroup" data-type="horizontal">
 						<%= link_to 'Like', 
@@ -37,8 +37,8 @@
 					<div data-role="collapsible" data-collapsed="true" >
 						<h3><%=post["comments"]["total"] %> Comments | <%=post["likes"]["total"] %> Likes</h3>
 						<% post["comments"]["comments"].each do |c| %>
-							<%= image_tag(c["user"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
-							<b><%= c["user"]["name"] %></b> &nbsp; 
+							<%= image_tag(c["parent"]["photo"]["smallPhotoUrl"]+"?oauth_token="+ENV['sfdc_token'], "class" => "glossy", "id" => c["id"], "width" => "30", "height" => "30")%>
+							<b><%= c["parent"]["name"] %></b> &nbsp; 
 							<%= c["body"]["text"] %><br/>
 						<% end %>
 					</div>
@@ -49,16 +49,16 @@
 </div>
 
 <div data-role="footer">
- 	<% if (!@feed["feedItems"]["previousPageUrl"].nil?)%>
+ 	<% if (!@feed["previousPageUrl"].nil?)%>
 		<%= link_to 'Newer', 
 			{:action => "mynewsfeed", :controller => "my_chatter", 
-			 :previouspageurl => @feed["feedItems"]["previousPageUrl"]}, "class" => "ui-btn-left",
+			 :previouspageurl => @feed["previousPageUrl"]}, "class" => "ui-btn-left",
 	"data-icon" => "arrow-l", "data-iconpos" => "left", "data-transition" => "slidedown"%>
 	<% end %>
-	<% if (!@feed["feedItems"]["nextPageUrl"].nil?)%>
+	<% if (!@feed["nextPageUrl"].nil?)%>
 		<%= link_to 'Older',
 			{:action => "mynewsfeed", :controller => "my_chatter", 
-			 :nextpageurl => @feed["feedItems"]["nextPageUrl"]},  "class" => "ui-btn-right",
+			 :nextpageurl => @feed["nextPageUrl"]},  "class" => "ui-btn-right",
 	"data-icon" => "arrow-r", "data-iconpos" => "right", "data-transition" => "slideup"%>
 	<% end %>
  
