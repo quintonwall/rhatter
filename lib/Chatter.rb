@@ -43,13 +43,21 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-    
+   puts "---TEST----" 
+   puts  :body => { :messageSegments => {
+                  :type => 'Text',
+                  :text => post.body
+                }
+             }.to_json
+  puts "---END---"      
+             
     HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items",
       :body => { :messageSegments => {
                     :type => 'Text',
                     :text => post.body
                   }
-               }.to_json)
+               }.to_json,
+       :options => { headers => { 'ContentType' => 'application/json' } } )
     end
   
   def self.like_feeditem(id)
