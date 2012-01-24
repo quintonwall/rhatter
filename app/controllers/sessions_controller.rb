@@ -3,6 +3,8 @@ require 'Accounts'
 class SessionsController < ApplicationController
   skip_before_filter :authorize
   
+  
+  #todo: store unique user creds in a local memcache keyed by username
   def create
     ENV['sfdc_token'] = request.env['omniauth.auth']['credentials']['token']
     ENV['sfdc_instance_url'] = request.env['omniauth.auth']['instance_url']

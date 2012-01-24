@@ -43,8 +43,14 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-    post(Chatter.root_url+"/feeds/user-profile/me/feed-items?text="+CGI::escape(post.body))
-  end
+    
+    HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items",
+      :body => { :messageSegments => {
+                    :type => 'Text',
+                    :text => post.body
+                  }
+               }.to_json)
+    end
   
   def self.like_feeditem(id)
     post(Chatter.root_url+"/feed-items/"+id+"/likes")

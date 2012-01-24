@@ -8,4 +8,6 @@ class Post
     #  @createdbyid   = cid
      # @body = btext
   #  end
+
+  
 end
