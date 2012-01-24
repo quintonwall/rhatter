@@ -44,7 +44,7 @@ class Chatter
   
   def self.set_my_user_status(post)
    
-   puts  "{ ":body => { :messageSegments => [
+   puts  "{ "+ :body => { :messageSegments => [
                   :type => 'Text',
                   :text => post.body
                 ]
