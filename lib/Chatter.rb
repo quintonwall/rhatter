@@ -44,7 +44,7 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-   
+    Chatter.set_headers
    puts "------REQ--------"
    puts  :body => { :messageSegments => [
                   :type => 'Text',
@@ -58,8 +58,8 @@ class Chatter
                     :type => 'Text',
                     :text => post.body
                   }
-               }.to_json,
-       :options => { headers => { 'ContentType' => 'application/json' } } )
+               }.to_json )
+      # :options => { headers => { 'ContentType' => 'application/json' } } )
        
       puts "---------RES-----"
       puts @response
