@@ -8,6 +8,7 @@ class Chatter
   #headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
   format :json
   #debug_output $stderr
+  debug_output $stdout
 
   def self.set_headers
     headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
