@@ -54,10 +54,10 @@ class Chatter
       
              
     @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items",
-      :body => { :messageSegments => {
+      :body => { :body => { :messageSegments => {
                     :type => 'Text',
                     :text => post.body
-                  }
+                  }}
                }.to_json )
       # :options => { headers => { 'ContentType' => 'application/json' } } )
        
