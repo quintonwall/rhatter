@@ -8,7 +8,7 @@ class Chatter
   #headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
   format :json
   #debug_output $stderr
-  debug_output $stdout
+  #debug_output $stdout
 
   def self.set_headers
     headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
@@ -44,22 +44,15 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-    Chatter.set_headers
-   puts "------REQ--------"
-   puts  :body => { :messageSegments => [
-                  :type => 'Text',
-                  :text => post.body
-                ]
-             }.to_json
-      
-             
-    @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items",
-      :body => { :body => { :messageSegments => {
-                    :type => 'Text',
+    @options = Chatter.set_http_options
+    
+    options.merge!( :body => { :body => { :messageSegments => {
+                    :type => "Text",
                     :text => post.body
-                  }}
-               }.to_json )
-      # :options => { headers => { 'ContentType' => 'application/json' } } )
+                   }}}.to_json
+                    )
+  
+    @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
        
       puts "---------RES-----"
       puts @response
@@ -89,6 +82,15 @@ class Chatter
       
        @feed["feedItems"] = get(ENV['sfdc_instance_url']+refpath)
        return @feed
+  end
+  
+  def self.set_http_options
+    @options = { :headers => { 'Authorization'   => "OAuth #{ENV['sfdc_token']}",
+                                   'Content-Type'    => "application/json",
+                                   'X-PrettyPrint'   => "1"                       
+                                 }
+                   }
+    return @options
   end
   
   def self.log_response(resp, method_name)
