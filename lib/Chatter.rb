@@ -73,7 +73,7 @@ class Chatter
          options.merge!( :body => { :body => { :messageSegments => [
                                      {
                                        :type => "Text",
-                                       :text => post.body
+                                       :text => comment
                                      }
                                    ]}
                                   }.to_json
