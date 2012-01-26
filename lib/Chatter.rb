@@ -45,8 +45,6 @@ class Chatter
   
   def self.set_my_user_status(post)
     options = Chatter.set_http_options
-    puts "---------OPTIONS-----"
-    puts @options
     
     options.merge!( :body => { :body => { :messageSegments => [
                                 {
@@ -58,9 +56,7 @@ class Chatter
                     )
   
     @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
-       
-      puts "---------RES-----"
-      puts @response
+   
     end
   
   def self.like_feeditem(id)
@@ -72,8 +68,19 @@ class Chatter
   end
   
   def self.add_comment(comment)
-    post(Chatter.root_url+"/feed-items/"+comment.feeditemid+
-         "/comments?text="+CGI::escape(comment.body))
+         options = Chatter.set_http_options
+
+         options.merge!( :body => { :body => { :messageSegments => [
+                                     {
+                                       :type => "Text",
+                                       :text => post.body
+                                     }
+                                   ]}
+                                  }.to_json
+                         )
+
+         @response = HTTParty.post(Chatter.root_url+"/feed-items/"+comment.feeditemid+"/comments", options)
+         
   end
   
   
