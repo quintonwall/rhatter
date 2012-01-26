@@ -44,12 +44,17 @@ class Chatter
   end
   
   def self.set_my_user_status(post)
-    @options = Chatter.set_http_options
+    options = Chatter.set_http_options
+    puts "---------OPTIONS-----"
+    puts @options
     
-    options.merge!( :body => { :body => { :messageSegments => {
-                    :type => "Text",
-                    :text => post.body
-                   }}}.to_json
+    options.merge!( :body => { :body => { :messageSegments => [
+                                {
+                                  :type => "Text",
+                                  :text => post.body
+                                }
+                              ]}
+                             }.to_json
                     )
   
     @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
