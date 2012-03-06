@@ -8,7 +8,7 @@ class Chatter
   #headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
   format :json
   #debug_output $stderr
-  #debug_output $stdout
+  debug_output $stdout
 
   def self.set_headers
     headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
@@ -54,7 +54,6 @@ class Chatter
                               ]}
                              }.to_json
                     )
-   puts options
    
     @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
     end
