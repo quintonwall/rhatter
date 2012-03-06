@@ -54,9 +54,9 @@ class Chatter
                               ]}
                              }.to_json
                     )
-  
-    @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
+   puts options
    
+    @response = HTTParty.post(Chatter.root_url+"/feeds/news/me/feed-items", options)
     end
   
   def self.like_feeditem(id)
